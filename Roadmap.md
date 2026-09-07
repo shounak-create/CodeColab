@@ -14,13 +14,13 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Completed
 
-* Defined project purpose
-* Defined core features
-* Selected technology stack
-* Designed high-level architecture
-* Planned database entities
-* Designed authentication strategy
-* Established development workflow
+* [x] Defined project purpose
+* [x] Defined core features
+* [x] Selected technology stack
+* [x] Designed high-level architecture
+* [x] Planned database entities
+* [x] Designed authentication strategy
+* [x] Established development workflow
 
 ---
 
@@ -32,16 +32,16 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Completed
 
-* Node.js setup
-* Express setup
-* MongoDB connection
-* Mongoose setup
-* Environment variables
-* CORS
-* Cookie parser
-* JSON parsing
-* Health-check endpoint
-* Backend folder structure
+* [x] Node.js setup
+* [x] Express setup
+* [x] MongoDB connection
+* [x] Mongoose setup
+* [x] Environment variables
+* [x] CORS
+* [x] Cookie parser
+* [x] JSON parsing
+* [x] Health-check endpoint
+* [x] Backend folder structure
 
 ---
 
@@ -112,19 +112,65 @@ Each module represents a meaningful feature or architectural milestone.
 
 ## Module 3 — User & Profile
 
-**Status: ⬜ Next**
+**Status: ✅ Complete**
 
-### Planned
+### Profile
 
-* User profile retrieval
-* Update profile
-* Update username
-* Update email
-* Change password
-* Avatar support
-* Online/offline status foundation
-* User search
-* Profile validation
+* [x] Get own profile
+* [x] Get public profile
+* [x] Handle nonexistent users
+* [x] Protect sensitive profile fields
+* [x] Never expose passwords
+
+### Profile Updates
+
+* [x] Update name
+* [x] Update username
+* [x] Update avatar
+* [x] Validate profile updates
+* [x] Check username uniqueness
+
+### Email
+
+* [x] Change email
+* [x] Validate email
+* [x] Normalize email
+* [x] Check email uniqueness
+
+### Password
+
+* [x] Change password
+* [x] Verify current password
+* [x] Hash new password
+* [x] Invalidate old password
+
+### User Search
+
+* [x] Search users
+* [x] Search by username
+* [x] Search by name
+* [x] Case-insensitive search
+* [x] Limit search results
+* [x] Protect search endpoint with authentication
+* [x] Validate search query
+
+### Testing
+
+* [x] Profile retrieval tested
+* [x] Public profile tested
+* [x] Profile update tested
+* [x] Duplicate username tested
+* [x] Avatar validation tested
+* [x] Email update tested
+* [x] Duplicate email tested
+* [x] Password change tested
+* [x] Wrong current password tested
+* [x] Old password invalidation tested
+* [x] New password tested
+* [x] Sensitive fields tested
+* [x] User search tested
+* [x] Search validation tested
+* [x] Authentication protection tested
 
 ---
 
@@ -132,18 +178,20 @@ Each module represents a meaningful feature or architectural milestone.
 
 ## Module 4 — Friend Requests
 
-**Status: ⬜ Planned**
+**Status: ⬜ Next**
 
 ### Planned
 
-* Send friend request
-* Accept request
-* Reject request
-* Cancel request
-* Prevent duplicate requests
-* Prevent self-requests
-* Request validation
-* Request status
+* [ ] Send friend request
+* [ ] Accept request
+* [ ] Reject request
+* [ ] Cancel request
+* [ ] Prevent duplicate requests
+* [ ] Prevent self-requests
+* [ ] Request validation
+* [ ] Request status
+* [ ] Authorization checks
+* [ ] Test all request states
 
 ---
 
@@ -153,11 +201,13 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Create friendship after acceptance
-* Remove friendship
-* Friend list
-* Friendship validation
-* Prevent duplicate friendships
+* [ ] Create friendship after acceptance
+* [ ] Remove friendship
+* [ ] Friend list
+* [ ] Friendship validation
+* [ ] Prevent duplicate friendships
+* [ ] Authorization checks
+* [ ] Test friendship lifecycle
 
 ---
 
@@ -169,12 +219,12 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Create conversations
-* One-to-one conversations
-* Conversation members
-* Conversation retrieval
-* Conversation authorization
-* Conversation metadata
+* [ ] Create conversations
+* [ ] One-to-one conversations
+* [ ] Conversation members
+* [ ] Conversation retrieval
+* [ ] Conversation authorization
+* [ ] Conversation metadata
 
 ---
 
@@ -184,13 +234,13 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Send messages
-* Store messages
-* Retrieve messages
-* Message ownership
-* Message pagination
-* Edit messages
-* Delete messages
+* [ ] Send messages
+* [ ] Store messages
+* [ ] Retrieve messages
+* [ ] Message ownership
+* [ ] Message pagination
+* [ ] Edit messages
+* [ ] Delete messages
 
 ---
 
@@ -202,11 +252,11 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Socket.IO server
-* Client connection
-* Authentication handshake
-* Socket user identification
-* Connection/disconnection handling
+* [ ] Socket.IO server
+* [ ] Client connection
+* [ ] Authentication handshake
+* [ ] Socket user identification
+* [ ] Connection/disconnection handling
 
 ---
 
@@ -216,11 +266,11 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Real-time message delivery
-* Conversation rooms
-* Join/leave rooms
-* Message broadcasting
-* Persist-before-broadcast architecture
+* [ ] Real-time message delivery
+* [ ] Conversation rooms
+* [ ] Join/leave rooms
+* [ ] Message broadcasting
+* [ ] Persist-before-broadcast architecture
 
 ---
 
@@ -230,11 +280,11 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Typing indicators
-* Online status
-* Offline status
-* Last seen
-* Socket presence management
+* [ ] Typing indicators
+* [ ] Online status
+* [ ] Offline status
+* [ ] Last seen
+* [ ] Socket presence management
 
 ---
 
@@ -244,11 +294,11 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Sent
-* Delivered
-* Read
-* Read receipts
-* Message status synchronization
+* [ ] Sent
+* [ ] Delivered
+* [ ] Read
+* [ ] Read receipts
+* [ ] Message status synchronization
 
 ---
 
@@ -260,12 +310,12 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Notification model
-* Friend-request notifications
-* Message notifications
-* Read/unread state
-* Notification retrieval
-* Notification cleanup
+* [ ] Notification model
+* [ ] Friend-request notifications
+* [ ] Message notifications
+* [ ] Read/unread state
+* [ ] Notification retrieval
+* [ ] Notification cleanup
 
 ---
 
@@ -277,13 +327,13 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* File upload architecture
-* Image uploads
-* Avatar uploads
-* Message attachments
-* Cloud storage integration
-* File validation
-* File size restrictions
+* [ ] File upload architecture
+* [ ] Image uploads
+* [ ] Avatar uploads
+* [ ] Message attachments
+* [ ] Cloud storage integration
+* [ ] File validation
+* [ ] File size restrictions
 
 ---
 
@@ -295,12 +345,12 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Next.js setup
-* TypeScript
-* Tailwind CSS
-* Application layout
-* API integration
-* Frontend architecture
+* [ ] Next.js setup
+* [ ] TypeScript
+* [ ] Tailwind CSS
+* [ ] Application layout
+* [ ] API integration
+* [ ] Frontend architecture
 
 ---
 
@@ -310,13 +360,13 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Register page
-* Login page
-* Authentication state
-* Access-token handling
-* Refresh flow
-* Logout
-* Protected routes
+* [ ] Register page
+* [ ] Login page
+* [ ] Authentication state
+* [ ] Access-token handling
+* [ ] Refresh flow
+* [ ] Logout
+* [ ] Protected routes
 
 ---
 
@@ -326,12 +376,12 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Profile page
-* Profile editing
-* User search
-* Friend requests
-* Friend list
-* Notifications
+* [ ] Profile page
+* [ ] Profile editing
+* [ ] User search
+* [ ] Friend requests
+* [ ] Friend list
+* [ ] Notifications
 
 ---
 
@@ -341,13 +391,13 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Conversation list
-* Chat window
-* Message bubbles
-* Message composer
-* Message history
-* Pagination
-* Empty states
+* [ ] Conversation list
+* [ ] Chat window
+* [ ] Message bubbles
+* [ ] Message composer
+* [ ] Message history
+* [ ] Pagination
+* [ ] Empty states
 
 ---
 
@@ -357,12 +407,12 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Socket.IO client
-* Real-time messages
-* Typing indicators
-* Online presence
-* Read receipts
-* Real-time notifications
+* [ ] Socket.IO client
+* [ ] Real-time messages
+* [ ] Typing indicators
+* [ ] Online presence
+* [ ] Read receipts
+* [ ] Real-time notifications
 
 ---
 
@@ -374,11 +424,11 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Optimistic messages
-* Temporary message IDs
-* Server reconciliation
-* Failed-operation rollback
-* Loading states
+* [ ] Optimistic messages
+* [ ] Temporary message IDs
+* [ ] Server reconciliation
+* [ ] Failed-operation rollback
+* [ ] Loading states
 
 ---
 
@@ -388,11 +438,11 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* User search
-* Conversation search
-* Message pagination
-* Cursor-based pagination
-* Database query optimization
+* [ ] User search improvements
+* [ ] Conversation search
+* [ ] Message pagination
+* [ ] Cursor-based pagination
+* [ ] Database query optimization
 
 ---
 
@@ -402,12 +452,12 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Redis setup
-* Caching
-* Presence
-* Socket scaling considerations
-* Session-related use cases
-* Rate limiting
+* [ ] Redis setup
+* [ ] Caching
+* [ ] Presence
+* [ ] Socket scaling considerations
+* [ ] Session-related use cases
+* [ ] Rate limiting
 
 ---
 
@@ -419,16 +469,16 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Rate limiting
-* Helmet
-* Input sanitization
-* Security headers
-* CORS hardening
-* Cookie security
-* JWT security
-* Password security
-* Error handling
-* Abuse prevention
+* [ ] Rate limiting
+* [ ] Helmet
+* [ ] Input sanitization
+* [ ] Security headers
+* [ ] CORS hardening
+* [ ] Cookie security
+* [ ] JWT security
+* [ ] Password security
+* [ ] Error handling
+* [ ] Abuse prevention
 
 ---
 
@@ -440,13 +490,13 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Unit tests
-* Integration tests
-* Authentication tests
-* API tests
-* Database testing
-* Mocking
-* Error-case testing
+* [ ] Unit tests
+* [ ] Integration tests
+* [ ] Authentication tests
+* [ ] API tests
+* [ ] Database testing
+* [ ] Mocking
+* [ ] Error-case testing
 
 ---
 
@@ -456,11 +506,11 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Component testing
-* User interaction testing
-* Authentication UI testing
-* Chat UI testing
-* Real-time UI testing
+* [ ] Component testing
+* [ ] User interaction testing
+* [ ] Authentication UI testing
+* [ ] Chat UI testing
+* [ ] Real-time UI testing
 
 ---
 
@@ -472,12 +522,12 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Swagger/OpenAPI
-* Endpoint documentation
-* Request schemas
-* Response schemas
-* Authentication documentation
-* Error responses
+* [ ] Swagger/OpenAPI
+* [ ] Endpoint documentation
+* [ ] Request schemas
+* [ ] Response schemas
+* [ ] Authentication documentation
+* [ ] Error responses
 
 ---
 
@@ -489,13 +539,13 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Backend Dockerfile
-* Frontend Dockerfile
-* Docker Compose
-* Environment configuration
-* MongoDB container
-* Redis container
-* Development environment
+* [ ] Backend Dockerfile
+* [ ] Frontend Dockerfile
+* [ ] Docker Compose
+* [ ] Environment configuration
+* [ ] MongoDB container
+* [ ] Redis container
+* [ ] Development environment
 
 ---
 
@@ -507,15 +557,15 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* Production environment
-* Database deployment
-* Backend deployment
-* Frontend deployment
-* Environment variables
-* HTTPS
-* Domain configuration
-* Logging
-* Monitoring
+* [ ] Production environment
+* [ ] Database deployment
+* [ ] Backend deployment
+* [ ] Frontend deployment
+* [ ] Environment variables
+* [ ] HTTPS
+* [ ] Domain configuration
+* [ ] Logging
+* [ ] Monitoring
 
 ---
 
@@ -525,12 +575,12 @@ Each module represents a meaningful feature or architectural milestone.
 
 ### Planned
 
-* GitHub Actions
-* Automated testing
-* Build pipeline
-* Docker builds
-* Deployment pipeline
-* Production checks
+* [ ] GitHub Actions
+* [ ] Automated testing
+* [ ] Build pipeline
+* [ ] Docker builds
+* [ ] Deployment pipeline
+* [ ] Production checks
 
 ---
 
@@ -541,7 +591,7 @@ Phase 0 — Planning
 ████████████████████  100%
 
 Phase 1 — Backend Foundation
-██████░░░░░░░░░░░░░░   67%
+████████████████████  100%
 
 Phase 2 — Connections
 ░░░░░░░░░░░░░░░░░░░░    0%
@@ -591,13 +641,15 @@ Module 1 ✅
     ↓
 Module 2 ✅
     ↓
-Module 3 ⬅ NEXT
+Module 3 ✅
     ↓
-Module 4
+Module 4 ⬅ NEXT
+    ↓
+Module 5
     ↓
 ...
     ↓
 Module 28
 ```
 
-**Current module: Module 3 — User & Profile**
+**Current module: Module 4 — Friend Requests**

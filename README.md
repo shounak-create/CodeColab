@@ -208,92 +208,147 @@ This provides **refresh-token rotation**, meaning an old refresh token becomes i
 
 ---
 
-# 🔌 Authentication API
+# 👤 User & Profile System
+
+The user system builds on top of the authentication system and provides profile management and user discovery.
+
+## Profile Features
+
+Authenticated users can:
+
+* View their own profile
+* Update their name
+* Update their username
+* Update their avatar
+* Change their email
+* Change their password
+* Search for other users
+
+Users can also view another user's **public profile**.
+
+---
+
+## Profile Data Security
+
+Public profiles expose only non-sensitive information:
+
+```text
+name
+username
+avatar
+status
+createdAt
+```
+
+Private information such as email is only returned through authenticated profile access.
+
+Passwords are never returned by the API.
+
+Passwords remain hashed using bcrypt in MongoDB.
+
+---
+
+## User API
 
 Base URL:
 
 ```text
-/api/auth
+/api/users
 ```
 
-## Register
+### Get Own Profile
 
 ```http
-POST /api/auth/register
+GET /api/users/me
 ```
 
-Creates a new user account.
+Authentication required.
 
-### Request
+Uses the authenticated user's ID from the verified JWT.
+
+---
+
+### Get Public Profile
+
+```http
+GET /api/users/:username
+```
+
+Returns public profile information for the specified username.
+
+---
+
+### Update Profile
+
+```http
+PATCH /api/users/me
+```
+
+Can update:
 
 ```json
 {
-  "name": "Shawn",
-  "username": "shawn",
-  "email": "shawn@example.com",
-  "password": "password123"
+  "name": "New Name",
+  "username": "new_username",
+  "avatar": "https://example.com/avatar.jpg"
 }
 ```
 
----
+Authentication and validation are required.
 
-## Login
-
-```http
-POST /api/auth/login
-```
-
-Authenticates a user.
-
-Returns:
-
-* User information
-* Access token
-
-The refresh token is stored in an HTTP-only cookie.
+Username uniqueness is checked before updating.
 
 ---
 
-## Current User
+### Change Email
 
 ```http
-GET /api/auth/me
+PATCH /api/users/me/email
 ```
 
-Protected endpoint.
+Example:
 
-Requires:
-
-```http
-Authorization: Bearer <access-token>
+```json
+{
+  "email": "newemail@example.com"
+}
 ```
 
-Returns the currently authenticated user.
+The email is normalized and checked for duplicates.
 
 ---
 
-## Refresh Token
+### Change Password
 
 ```http
-POST /api/auth/refresh
+PATCH /api/users/me/password
 ```
 
-Uses the refresh-token cookie to:
+Example:
 
-1. Verify the refresh token
-2. Find the corresponding stored token
-3. Rotate the refresh token
-4. Generate a new access token
+```json
+{
+  "currentPassword": "oldpassword",
+  "newPassword": "newpassword123"
+}
+```
+
+The current password is verified with bcrypt before the new password is hashed and stored.
 
 ---
 
-## Logout
+### Search Users
 
 ```http
-POST /api/auth/logout
+GET /api/users/search?q=sha
 ```
 
-Revokes the refresh-token session and clears the refresh-token cookie.
+Searches users by:
+
+* Name
+* Username
+
+Results are limited to 20 users and only return non-sensitive profile information.
 
 ---
 
@@ -306,7 +361,8 @@ backend/
 │   │   └── db.js
 │   │
 │   ├── controllers/
-│   │   └── auth.controller.js
+│   │   ├── auth.controller.js
+│   │   └── user.controller.js
 │   │
 │   ├── middlewares/
 │   │   ├── auth.middleware.js
@@ -318,16 +374,19 @@ backend/
 │   │
 │   ├── routes/
 │   │   ├── auth.routes.js
-│   │   └── health.routes.js
+│   │   ├── health.routes.js
+│   │   └── user.routes.js
 │   │
 │   ├── services/
-│   │   └── auth.service.js
+│   │   ├── auth.service.js
+│   │   └── user.service.js
 │   │
 │   ├── utils/
 │   │   └── token.utils.js
 │   │
 │   ├── validators/
-│   │   └── auth.validator.js
+│   │   ├── auth.validator.js
+│   │   └── user.validator.js
 │   │
 │   ├── app.js
 │   └── server.js
@@ -355,7 +414,7 @@ Defined:
 * Architecture
 * Data models
 * Authentication strategy
-* Development roadmap
+* Development workflow
 
 ---
 
@@ -416,7 +475,7 @@ Verified successfully:
 * Invalid password rejection
 * Access-token authentication
 * Protected `/me`
-* Refresh token
+* Refresh
 * Refresh-token rotation
 * Old refresh-token invalidation
 * Logout
@@ -425,17 +484,66 @@ Verified successfully:
 
 ---
 
+## Module 3 — User & Profile
+
+**Status: ✅ Complete**
+
+Implemented:
+
+* Get authenticated user's profile
+* Get public user profile
+* Update profile
+* Update name
+* Update username
+* Update avatar
+* Username uniqueness checking
+* Change email
+* Email uniqueness checking
+* Change password
+* Current-password verification
+* New-password hashing
+* User search
+* Search by name
+* Search by username
+* Search result limiting
+* Profile validation
+* Sensitive-field protection
+
+### User & Profile Testing
+
+Verified successfully:
+
+* Own profile retrieval
+* Public profile retrieval
+* Nonexistent user handling
+* Profile updates
+* Username updates
+* Duplicate username rejection
+* Avatar validation
+* Email updates
+* Duplicate email rejection
+* Password changes
+* Incorrect current-password rejection
+* Old password invalidation
+* New password verification
+* Sensitive fields not exposed
+* User search
+* Search validation
+* Authentication protection
+
+---
+
 # 🔜 Current Development Status
 
-**Completed:** Module 0 → Module 2
+**Completed:** Module 0 → Module 3
 
-**Next:** Module 3 — User & Profile
+**Next:** Module 4 — Friend Requests
 
 ---
 
 # 🔄 Development Workflow
 
-Every module follows this workflow:
+Every module follows:
 
 ```text
 PLAN
@@ -457,7 +565,7 @@ UPDATE ROADMAP
 NEXT MODULE
 ```
 
-The README and roadmap are updated after every completed module so the project always reflects its current state.
+The README and roadmap are updated after every completed module.
 
 ---
 
@@ -489,7 +597,8 @@ Every major implementation should therefore be understood before moving to the n
 Module 0  ████████████████████  Complete
 Module 1  ████████████████████  Complete
 Module 2  ████████████████████  Complete
-Module 3  ░░░░░░░░░░░░░░░░░░░░  Next
+Module 3  ████████████████████  Complete
+Module 4  ░░░░░░░░░░░░░░░░░░░░  Next
 ```
 
-CodeColab is currently in **Phase 1 — Backend Foundation**.
+CodeColab is currently moving from **Phase 1 — Backend Foundation** into **Phase 2 — Connections**.
