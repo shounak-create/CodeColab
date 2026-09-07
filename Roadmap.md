@@ -130,27 +130,27 @@ Each module represents a meaningful feature or architectural milestone.
 ## Module 4 — Friend Requests
 **Status: ⬜ Next**
 ### Planned
-* [ ] Send friend request
-* [ ] Accept request
-* [ ] Reject request
-* [ ] Cancel request
-* [ ] Prevent duplicate requests
-* [ ] Prevent self-requests
-* [ ] Request validation
-* [ ] Request status
-* [ ] Authorization checks
-* [ ] Test all request states
+* [x] Send friend request
+* [x] Accept request
+* [x] Reject request
+* [x] Cancel request
+* [x] Prevent duplicate requests
+* [x] Prevent self-requests
+* [x] Request validation
+* [x] Request status
+* [x] Authorization checks
+* [x] Test all request states
 ---
 ## Module 5 — Friendships
 **Status: ⬜ Planned**
 ### Planned
-* [ ] Create friendship after acceptance
-* [ ] Remove friendship
-* [ ] Friend list
-* [ ] Friendship validation
-* [ ] Prevent duplicate friendships
-* [ ] Authorization checks
-* [ ] Test friendship lifecycle
+* [x] Create friendship after acceptance
+* [x] Remove friendship
+* [x] Friend list
+* [x] Friendship validation
+* [x] Prevent duplicate friendships
+* [x] Authorization checks
+* [x] Test friendship lifecycle
 ---
 # Phase 3 — Chat Backend
 ## Module 6 — Conversations
