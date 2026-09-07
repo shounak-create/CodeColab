@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 import User from "../models/user.model.js";
 import FriendRequest from "../models/friendRequest.model.js";
 
+import {
+    createFriendship,
+} from "./friendship.service.js";
+
 export const sendFriendRequest = async (
     senderId,
     receiverId
@@ -114,7 +118,9 @@ export const acceptFriendRequest = async (
     if (
         !mongoose.Types.ObjectId.isValid(requestId)
     ) {
-        throw new Error("Invalid friend request ID.");
+        throw new Error(
+            "Invalid friend request ID."
+        );
     }
 
     const request =
@@ -142,6 +148,11 @@ export const acceptFriendRequest = async (
             "Friend request not found or cannot be accepted."
         );
     }
+
+    await createFriendship(
+        request.sender._id.toString(),
+        request.receiver.toString()
+    );
 
     return request;
 };
