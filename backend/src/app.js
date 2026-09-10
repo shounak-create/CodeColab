@@ -5,8 +5,8 @@ import cookieParser from "cookie-parser";
 // import healthRoutes from "./routes/health.routes.js";
 import authRoutes from "./routes/auth.routes.js";
 import userRoutes from "./routes/user.route.js";
-import friendRequestRoutes from "./routes/friendRequest.routes.js";
-import friendshipRoutes from "./routes/friendship.routes.js";
+import friendRequestRoutes from "./routes/friendRequest.route.js";
+import friendshipRoutes from "./routes/friendship.route.js";
 
 const app = express();
 

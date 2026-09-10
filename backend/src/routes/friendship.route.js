@@ -12,7 +12,7 @@ import { validate } from "../middlewares/validation.middleware.js";
 
 import {
     friendIdValidator,
-} from "../validators/friendship.validator.js";
+} from "../validators/friend.validator.js";
 
 const router = Router();
 

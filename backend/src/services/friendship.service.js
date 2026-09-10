@@ -6,7 +6,7 @@ import Friendship from "../models/friendship.model.js";
 
 import {
     normalizeUserPair,
-} from "../utils/friendship.utils.js";
+} from "../utils/friendship.util.js";
 
 export const createFriendship = async (
     userIdA,
