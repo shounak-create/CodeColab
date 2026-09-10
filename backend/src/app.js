@@ -7,6 +7,7 @@ import authRoutes from "./routes/auth.routes.js";
 import userRoutes from "./routes/user.route.js";
 import friendRequestRoutes from "./routes/friendRequest.route.js";
 import friendshipRoutes from "./routes/friendship.route.js";
+import conversationRoutes from "./routes/conversation.routes.js";
 
 const app = express();
 
@@ -26,5 +27,6 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/friend-requests",friendRequestRoutes);
 app.use("/api/friendships",friendshipRoutes);
+app.use("/api/conversation",conversationRoutes);
 
 export default app;
