@@ -5,7 +5,7 @@ import Conversation from "../models/conversation.model.js";
 
 import {
     normalizeMemberPair,
-} from "../utils/conversation.utils.js";
+} from "../utils/conversation.util.js";
 
 export const createDirectConversation = async (
     userIdA,

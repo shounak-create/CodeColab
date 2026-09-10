@@ -7,7 +7,7 @@ import authRoutes from "./routes/auth.routes.js";
 import userRoutes from "./routes/user.route.js";
 import friendRequestRoutes from "./routes/friendRequest.route.js";
 import friendshipRoutes from "./routes/friendship.route.js";
-import conversationRoutes from "./routes/conversation.routes.js";
+import conversationRoutes from "./routes/conversation.route.js";
 
 const app = express();
 
