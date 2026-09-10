@@ -1,655 +1,923 @@
-# CodeColab — Development Roadmap
+**# CodeColab — Development Roadmap**
 
 This roadmap tracks the development of CodeColab from initial planning through production deployment.
 
 Each module represents a meaningful feature or architectural milestone.
 
----
+**---**
 
-# Phase 0 — Planning
+**# Phase 0 — Planning**
 
-## Module 0 — Requirements & Architecture
+**## Module 0 — Requirements & Architecture**
 
-**Status: ✅ Complete**
+**\*\*Status: ✅ Complete\*\***
 
-### Completed
+**### Completed**
 
-* [x] Defined project purpose
-* [x] Defined core features
-* [x] Selected technology stack
-* [x] Designed high-level architecture
-* [x] Planned database entities
-* [x] Designed authentication strategy
-* [x] Established development workflow
+\* [x] Defined project purpose
 
----
+\* [x] Defined core features
 
-# Phase 1 — Backend Foundation
+\* [x] Selected technology stack
 
-## Module 1 — Backend Foundation
+\* [x] Designed high-level architecture
 
-**Status: ✅ Complete**
+\* [x] Planned database entities
 
-### Completed
+\* [x] Designed authentication strategy
 
-* [x] Node.js setup
-* [x] Express setup
-* [x] MongoDB connection
-* [x] Mongoose setup
-* [x] Environment variables
-* [x] CORS
-* [x] Cookie parser
-* [x] JSON parsing
-* [x] Health-check endpoint
-* [x] Backend folder structure
+\* [x] Established development workflow
 
----
+\---
 
-## Module 2 — Authentication
+**# Phase 1 — Backend Foundation**
 
-**Status: ✅ Complete**
+**## Module 1 — Backend Foundation**
 
-### Models
+**\*\*Status: ✅ Complete\*\***
 
-* [x] User model
-* [x] RefreshToken model
-* [x] Refresh-token TTL index
+**### Completed**
 
-### Registration
+\* [x] Node.js setup
 
-* [x] Registration endpoint
+\* [x] Express setup
+
+\* [x] MongoDB connection
+
+\* [x] Mongoose setup
+
+\* [x] Environment variables
+
+\* [x] CORS
+
+\* [x] Cookie parser
+
+\* [x] JSON parsing
+
+\* [x] Health-check endpoint
+
+\* [x] Backend folder structure
+
+\---
+
+**## Module 2 — Authentication**
+
+**\*\*Status: ✅ Complete\*\***
+
+**### Models**
+
+\* [x] User model
+
+\* [x] RefreshToken model
+
+\* [x] Refresh-token TTL index
+
+**### Registration**
+
+\* [x] Registration endpoint
+
+\* [x] Request validation
+
+\* [x] Duplicate email detection
+
+\* [x] Duplicate username detection
+
+\* [x] Password hashing with bcrypt
+
+**### Login**
+
+\* [x] Login endpoint
+
+\* [x] Password verification
+
+\* [x] Access-token generation
+
+\* [x] Refresh-token generation
+
+\* [x] HTTP-only refresh-token cookie
+
+**### Authorization**
+
+\* [x] JWT access-token verification
+
+\* [x] Authentication middleware
+
+\* [x] Protected \`/me\` endpoint
+
+**### Refresh Tokens**
+
+\* [x] Refresh-token persistence
+
+\* [x] Refresh-token hashing
+
+\* [x] Refresh-token verification
+
+\* [x] Refresh-token rotation
+
+\* [x] Old token invalidation
+
+\* [x] Expiration handling
+
+**### Logout**
+
+\* [x] Logout endpoint
+
+\* [x] Refresh-token revocation
+
+\* [x] Refresh-token cookie clearing
+
+**### Testing**
+
+\* [x] Registration tested
+
+\* [x] Duplicate email tested
+
+\* [x] Duplicate username tested
+
+\* [x] Login tested
+
+\* [x] Wrong password tested
+
+\* [x] \`/me\` tested
+
+\* [x] Protected route tested
+
+\* [x] Refresh tested
+
+\* [x] Token rotation tested
+
+\* [x] Old refresh token tested
+
+\* [x] Logout tested
+
+\* [x] Revoked token tested
+
+\* [x] Validation tested
+
+\---
+
+**## Module 3 — User & Profile**
+
+**\*\*Status: ✅ Complete\*\***
+
+**### Profile**
+
+\* [x] Get own profile
+
+\* [x] Get public profile
+
+\* [x] Handle nonexistent users
+
+\* [x] Protect sensitive profile fields
+
+\* [x] Never expose passwords
+
+**### Profile Updates**
+
+\* [x] Update name
+
+\* [x] Update username
+
+\* [x] Update avatar
+
+\* [x] Validate profile updates
+
+\* [x] Check username uniqueness
+
+**### Email**
+
+\* [x] Change email
+
+\* [x] Validate email
+
+\* [x] Normalize email
+
+\* [x] Check email uniqueness
+
+**### Password**
+
+\* [x] Change password
+
+\* [x] Verify current password
+
+\* [x] Hash new password
+
+\* [x] Invalidate old password
+
+**### User Search**
+
+\* [x] Search users
+
+\* [x] Search by username
+
+\* [x] Search by name
+
+\* [x] Case-insensitive search
+
+\* [x] Limit search results
+
+\* [x] Protect search endpoint with authentication
+
+\* [x] Validate search query
+
+**### Testing**
+
+\* [x] Profile retrieval tested
+
+\* [x] Public profile tested
+
+\* [x] Profile update tested
+
+\* [x] Duplicate username tested
+
+\* [x] Avatar validation tested
+
+\* [x] Email update tested
+
+\* [x] Duplicate email tested
+
+\* [x] Password change tested
+
+\* [x] Wrong current password tested
+
+\* [x] Old password invalidation tested
+
+\* [x] New password tested
+
+\* [x] Sensitive fields tested
+
+\* [x] User search tested
+
+\* [x] Search validation tested
+
+\* [x] Authentication protection tested
+
+\---
+
+**# Phase 2 — Connections**
+
+**## Module 4 — Friend Requests**
+
+**\*\*Status: ✅ Complete\*\***
+
+**### Planned**
+
+\* [x] Send friend request
+
+\* [x] Accept request
+
+\* [x] Reject request
+
+\* [x] Cancel request
+
+\* [x] Prevent duplicate requests
+
+\* [x] Prevent self-requests
+
+\* [x] Request validation
+
+\* [x] Request status
+
+\* [x] Authorization checks
+
+\* [x] Test all request states
+
+\---
+
+**## Module 5 — Friendships**
+
+**\*\*Status: ✅ Complete\*\***
+
+**### Planned**
+
+\* [x] Create friendship after acceptance
+
+\* [x] Remove friendship
+
+\* [x] Friend list
+
+\* [x] Friendship validation
+
+\* [x] Prevent duplicate friendships
+
+\* [x] Authorization checks
+
+\* [x] Test friendship lifecycle
+
+\---
+
+**# Phase 3 — Chat Backend**
+
+**## Module 6 — Conversations**
+
+**\*\*Status: ✅ Complete\*\***
+
+**### Completed**
+
+* [x] Create direct conversations
+* [x] One-to-one conversations
+* [x] Exactly two conversation members
+* [x] Normalized member-pair representation
+* [x] Prevent duplicate conversations
+* [x] Conversation retrieval
+* [x] Current user's conversation list
+* [x] Direct conversation lookup between users
+* [x] Conversation-member authorization
+* [x] Conversation metadata
+* [x] Populate safe member profile fields
+* [x] Sensitive-field protection
 * [x] Request validation
-* [x] Duplicate email detection
-* [x] Duplicate username detection
-* [x] Password hashing with bcrypt
+* [x] Authentication protection
 
-### Login
+**### Testing**
 
-* [x] Login endpoint
-* [x] Password verification
-* [x] Access-token generation
-* [x] Refresh-token generation
-* [x] HTTP-only refresh-token cookie
-
-### Authorization
-
-* [x] JWT access-token verification
-* [x] Authentication middleware
-* [x] Protected `/me` endpoint
-
-### Refresh Tokens
-
-* [x] Refresh-token persistence
-* [x] Refresh-token hashing
-* [x] Refresh-token verification
-* [x] Refresh-token rotation
-* [x] Old token invalidation
-* [x] Expiration handling
-
-### Logout
-
-* [x] Logout endpoint
-* [x] Refresh-token revocation
-* [x] Refresh-token cookie clearing
-
-### Testing
-
-* [x] Registration tested
-* [x] Duplicate email tested
-* [x] Duplicate username tested
-* [x] Login tested
-* [x] Wrong password tested
-* [x] `/me` tested
-* [x] Protected route tested
-* [x] Refresh tested
-* [x] Token rotation tested
-* [x] Old refresh token tested
-* [x] Logout tested
-* [x] Revoked token tested
-* [x] Validation tested
-
----
-
-## Module 3 — User & Profile
-
-**Status: ✅ Complete**
-
-### Profile
-
-* [x] Get own profile
-* [x] Get public profile
-* [x] Handle nonexistent users
-* [x] Protect sensitive profile fields
-* [x] Never expose passwords
-
-### Profile Updates
-
-* [x] Update name
-* [x] Update username
-* [x] Update avatar
-* [x] Validate profile updates
-* [x] Check username uniqueness
-
-### Email
-
-* [x] Change email
-* [x] Validate email
-* [x] Normalize email
-* [x] Check email uniqueness
-
-### Password
-
-* [x] Change password
-* [x] Verify current password
-* [x] Hash new password
-* [x] Invalidate old password
-
-### User Search
-
-* [x] Search users
-* [x] Search by username
-* [x] Search by name
-* [x] Case-insensitive search
-* [x] Limit search results
-* [x] Protect search endpoint with authentication
-* [x] Validate search query
-
-### Testing
-
-* [x] Profile retrieval tested
-* [x] Public profile tested
-* [x] Profile update tested
-* [x] Duplicate username tested
-* [x] Avatar validation tested
-* [x] Email update tested
-* [x] Duplicate email tested
-* [x] Password change tested
-* [x] Wrong current password tested
-* [x] Old password invalidation tested
-* [x] New password tested
-* [x] Sensitive fields tested
-* [x] User search tested
-* [x] Search validation tested
+* [x] Conversation creation tested
+* [x] Duplicate conversation tested
+* [x] Reverse member-order tested
+* [x] Conversation listing tested
+* [x] Conversation retrieval tested
+* [x] Conversation-member authorization tested
+* [x] Direct conversation lookup tested
+* [x] Missing conversation handling tested
+* [x] Self-conversation rejection tested
+* [x] Invalid user ID tested
+* [x] Invalid conversation ID tested
+* [x] Nonexistent user handling tested
 * [x] Authentication protection tested
+* [x] Sensitive-field protection tested
 
 ---
 
-# Phase 2 — Connections
+**## Module 7 — Messages**
 
-## Module 4 — Friend Requests
+**\*\*Status: ⬜ Planned\*\***
 
-**Status: ⬜ Next**
+**### Planned**
 
-### Planned
+\* [ ] Send messages
 
-* [ ] Send friend request
-* [ ] Accept request
-* [ ] Reject request
-* [ ] Cancel request
-* [ ] Prevent duplicate requests
-* [ ] Prevent self-requests
-* [ ] Request validation
-* [ ] Request status
-* [ ] Authorization checks
-* [ ] Test all request states
+\* [ ] Store messages
 
----
+\* [ ] Retrieve messages
 
-## Module 5 — Friendships
+\* [ ] Message ownership
 
-**Status: ⬜ Planned**
+\* [ ] Message pagination
 
-### Planned
+\* [ ] Edit messages
 
-* [ ] Create friendship after acceptance
-* [ ] Remove friendship
-* [ ] Friend list
-* [ ] Friendship validation
-* [ ] Prevent duplicate friendships
-* [ ] Authorization checks
-* [ ] Test friendship lifecycle
+\* [ ] Delete messages
 
----
+\---
 
-# Phase 3 — Chat Backend
+**# Phase 4 — Real-Time System**
 
-## Module 6 — Conversations
+**## Module 8 — Socket.IO Foundation**
 
-**Status: ⬜ Planned**
+**\*\*Status: ⬜ Planned\*\***
 
-### Planned
+**### Planned**
 
-* [ ] Create conversations
-* [ ] One-to-one conversations
-* [ ] Conversation members
-* [ ] Conversation retrieval
-* [ ] Conversation authorization
-* [ ] Conversation metadata
+\* [ ] Socket.IO server
 
----
+\* [ ] Client connection
 
-## Module 7 — Messages
+\* [ ] Authentication handshake
 
-**Status: ⬜ Planned**
+\* [ ] Socket user identification
 
-### Planned
+\* [ ] Connection/disconnection handling
 
-* [ ] Send messages
-* [ ] Store messages
-* [ ] Retrieve messages
-* [ ] Message ownership
-* [ ] Message pagination
-* [ ] Edit messages
-* [ ] Delete messages
+\---
 
----
+**## Module 9 — Real-Time Messaging**
 
-# Phase 4 — Real-Time System
+**\*\*Status: ⬜ Planned\*\***
 
-## Module 8 — Socket.IO Foundation
+**### Planned**
 
-**Status: ⬜ Planned**
+\* [ ] Real-time message delivery
 
-### Planned
+\* [ ] Conversation rooms
 
-* [ ] Socket.IO server
-* [ ] Client connection
-* [ ] Authentication handshake
-* [ ] Socket user identification
-* [ ] Connection/disconnection handling
+\* [ ] Join/leave rooms
 
----
+\* [ ] Message broadcasting
 
-## Module 9 — Real-Time Messaging
+\* [ ] Persist-before-broadcast architecture
 
-**Status: ⬜ Planned**
+\---
 
-### Planned
+**## Module 10 — Typing & Presence**
 
-* [ ] Real-time message delivery
-* [ ] Conversation rooms
-* [ ] Join/leave rooms
-* [ ] Message broadcasting
-* [ ] Persist-before-broadcast architecture
+**\*\*Status: ⬜ Planned\*\***
 
----
+**### Planned**
 
-## Module 10 — Typing & Presence
+\* [ ] Typing indicators
 
-**Status: ⬜ Planned**
+\* [ ] Online status
 
-### Planned
+\* [ ] Offline status
 
-* [ ] Typing indicators
-* [ ] Online status
-* [ ] Offline status
-* [ ] Last seen
-* [ ] Socket presence management
+\* [ ] Last seen
 
----
+\* [ ] Socket presence management
 
-## Module 11 — Message Status
+\---
 
-**Status: ⬜ Planned**
+**## Module 11 — Message Status**
 
-### Planned
+**\*\*Status: ⬜ Planned\*\***
 
-* [ ] Sent
-* [ ] Delivered
-* [ ] Read
-* [ ] Read receipts
-* [ ] Message status synchronization
+**### Planned**
 
----
+\* [ ] Sent
 
-# Phase 5 — Notifications
+\* [ ] Delivered
 
-## Module 12 — Notification System
+\* [ ] Read
 
-**Status: ⬜ Planned**
+\* [ ] Read receipts
 
-### Planned
+\* [ ] Message status synchronization
 
-* [ ] Notification model
-* [ ] Friend-request notifications
-* [ ] Message notifications
-* [ ] Read/unread state
-* [ ] Notification retrieval
-* [ ] Notification cleanup
+\---
 
----
+**# Phase 5 — Notifications**
 
-# Phase 6 — Media
+**## Module 12 — Notification System**
 
-## Module 13 — File & Image Uploads
+**\*\*Status: ⬜ Planned\*\***
 
-**Status: ⬜ Planned**
+**### Planned**
 
-### Planned
+\* [ ] Notification model
 
-* [ ] File upload architecture
-* [ ] Image uploads
-* [ ] Avatar uploads
-* [ ] Message attachments
-* [ ] Cloud storage integration
-* [ ] File validation
-* [ ] File size restrictions
+\* [ ] Friend-request notifications
 
----
+\* [ ] Message notifications
 
-# Phase 7 — Frontend
+\* [ ] Read/unread state
 
-## Module 14 — Next.js Foundation
+\* [ ] Notification retrieval
 
-**Status: ⬜ Planned**
+\* [ ] Notification cleanup
 
-### Planned
+\---
 
-* [ ] Next.js setup
-* [ ] TypeScript
-* [ ] Tailwind CSS
-* [ ] Application layout
-* [ ] API integration
-* [ ] Frontend architecture
+**# Phase 6 — Media**
 
----
+**## Module 13 — File & Image Uploads**
 
-## Module 15 — Authentication UI
+**\*\*Status: ⬜ Planned\*\***
 
-**Status: ⬜ Planned**
+**### Planned**
 
-### Planned
+\* [ ] File upload architecture
 
-* [ ] Register page
-* [ ] Login page
-* [ ] Authentication state
-* [ ] Access-token handling
-* [ ] Refresh flow
-* [ ] Logout
-* [ ] Protected routes
+\* [ ] Image uploads
 
----
+\* [ ] Avatar uploads
 
-## Module 16 — User & Friend UI
+\* [ ] Message attachments
 
-**Status: ⬜ Planned**
+\* [ ] Cloud storage integration
 
-### Planned
+\* [ ] File validation
 
-* [ ] Profile page
-* [ ] Profile editing
-* [ ] User search
-* [ ] Friend requests
-* [ ] Friend list
-* [ ] Notifications
+\* [ ] File size restrictions
 
----
+\---
 
-## Module 17 — Chat UI
+**# Phase 7 — Frontend**
 
-**Status: ⬜ Planned**
+**## Module 14 — Next.js Foundation**
 
-### Planned
+**\*\*Status: ⬜ Planned\*\***
 
-* [ ] Conversation list
-* [ ] Chat window
-* [ ] Message bubbles
-* [ ] Message composer
-* [ ] Message history
-* [ ] Pagination
-* [ ] Empty states
+**### Planned**
 
----
+\* [ ] Next.js setup
 
-## Module 18 — Real-Time UI
+\* [ ] TypeScript
 
-**Status: ⬜ Planned**
+\* [ ] Tailwind CSS
 
-### Planned
+\* [ ] Application layout
 
-* [ ] Socket.IO client
-* [ ] Real-time messages
-* [ ] Typing indicators
-* [ ] Online presence
-* [ ] Read receipts
-* [ ] Real-time notifications
+\* [ ] API integration
 
----
+\* [ ] Frontend architecture
 
-# Phase 8 — Advanced Features
+\---
 
-## Module 19 — Optimistic UI
+**## Module 15 — Authentication UI**
 
-**Status: ⬜ Planned**
+**\*\*Status: ⬜ Planned\*\***
 
-### Planned
+**### Planned**
 
-* [ ] Optimistic messages
-* [ ] Temporary message IDs
-* [ ] Server reconciliation
-* [ ] Failed-operation rollback
-* [ ] Loading states
+\* [ ] Register page
 
----
+\* [ ] Login page
 
-## Module 20 — Search & Pagination
+\* [ ] Authentication state
 
-**Status: ⬜ Planned**
+\* [ ] Access-token handling
 
-### Planned
+\* [ ] Refresh flow
 
-* [ ] User search improvements
-* [ ] Conversation search
-* [ ] Message pagination
-* [ ] Cursor-based pagination
-* [ ] Database query optimization
+\* [ ] Logout
 
----
+\* [ ] Protected routes
 
-## Module 21 — Redis
+\---
 
-**Status: ⬜ Planned**
+**## Module 16 — User & Friend UI**
 
-### Planned
+**\*\*Status: ⬜ Planned\*\***
 
-* [ ] Redis setup
-* [ ] Caching
-* [ ] Presence
-* [ ] Socket scaling considerations
-* [ ] Session-related use cases
-* [ ] Rate limiting
+**### Planned**
 
----
+\* [ ] Profile page
 
-# Phase 9 — Security
+\* [ ] Profile editing
 
-## Module 22 — Application Security
+\* [ ] User search
 
-**Status: ⬜ Planned**
+\* [ ] Friend requests
 
-### Planned
+\* [ ] Friend list
 
-* [ ] Rate limiting
-* [ ] Helmet
-* [ ] Input sanitization
-* [ ] Security headers
-* [ ] CORS hardening
-* [ ] Cookie security
-* [ ] JWT security
-* [ ] Password security
-* [ ] Error handling
-* [ ] Abuse prevention
+\* [ ] Notifications
 
----
+\---
 
-# Phase 10 — Testing
+**## Module 17 — Chat UI**
 
-## Module 23 — Backend Testing
+**\*\*Status: ⬜ Planned\*\***
 
-**Status: ⬜ Planned**
+**### Planned**
 
-### Planned
+\* [ ] Conversation list
 
-* [ ] Unit tests
-* [ ] Integration tests
-* [ ] Authentication tests
-* [ ] API tests
-* [ ] Database testing
-* [ ] Mocking
-* [ ] Error-case testing
+\* [ ] Chat window
 
----
+\* [ ] Message bubbles
 
-## Module 24 — Frontend Testing
+\* [ ] Message composer
 
-**Status: ⬜ Planned**
+\* [ ] Message history
 
-### Planned
+\* [ ] Pagination
 
-* [ ] Component testing
-* [ ] User interaction testing
-* [ ] Authentication UI testing
-* [ ] Chat UI testing
-* [ ] Real-time UI testing
+\* [ ] Empty states
 
----
+\---
 
-# Phase 11 — Documentation
+**## Module 18 — Real-Time UI**
 
-## Module 25 — API Documentation
+**\*\*Status: ⬜ Planned\*\***
 
-**Status: ⬜ Planned**
+**### Planned**
 
-### Planned
+\* [ ] Socket.IO client
 
-* [ ] Swagger/OpenAPI
-* [ ] Endpoint documentation
-* [ ] Request schemas
-* [ ] Response schemas
-* [ ] Authentication documentation
-* [ ] Error responses
+\* [ ] Real-time messages
 
----
+\* [ ] Typing indicators
 
-# Phase 12 — Docker
+\* [ ] Online presence
 
-## Module 26 — Containerization
+\* [ ] Read receipts
 
-**Status: ⬜ Planned**
+\* [ ] Real-time notifications
 
-### Planned
+\---
 
-* [ ] Backend Dockerfile
-* [ ] Frontend Dockerfile
-* [ ] Docker Compose
-* [ ] Environment configuration
-* [ ] MongoDB container
-* [ ] Redis container
-* [ ] Development environment
+**# Phase 8 — Advanced Features**
 
----
+**## Module 19 — Optimistic UI**
 
-# Phase 13 — Deployment
+**\*\*Status: ⬜ Planned\*\***
 
-## Module 27 — Production Deployment
+**### Planned**
 
-**Status: ⬜ Planned**
+\* [ ] Optimistic messages
 
-### Planned
+\* [ ] Temporary message IDs
 
-* [ ] Production environment
-* [ ] Database deployment
-* [ ] Backend deployment
-* [ ] Frontend deployment
-* [ ] Environment variables
-* [ ] HTTPS
-* [ ] Domain configuration
-* [ ] Logging
-* [ ] Monitoring
+\* [ ] Server reconciliation
 
----
+\* [ ] Failed-operation rollback
 
-## Module 28 — CI/CD
+\* [ ] Loading states
 
-**Status: ⬜ Planned**
+\---
 
-### Planned
+**## Module 20 — Search & Pagination**
 
-* [ ] GitHub Actions
-* [ ] Automated testing
-* [ ] Build pipeline
-* [ ] Docker builds
-* [ ] Deployment pipeline
-* [ ] Production checks
+**\*\*Status: ⬜ Planned\*\***
 
----
+**### Planned**
 
-# 📊 Overall Progress
+\* [ ] User search improvements
 
-```text
+\* [ ] Conversation search
+
+\* [ ] Message pagination
+
+\* [ ] Cursor-based pagination
+
+\* [ ] Database query optimization
+
+\---
+
+**## Module 21 — Redis**
+
+**\*\*Status: ⬜ Planned\*\***
+
+**### Planned**
+
+\* [ ] Redis setup
+
+\* [ ] Caching
+
+\* [ ] Presence
+
+\* [ ] Socket scaling considerations
+
+\* [ ] Session-related use cases
+
+\* [ ] Rate limiting
+
+\---
+
+**# Phase 9 — Security**
+
+**## Module 22 — Application Security**
+
+**\*\*Status: ⬜ Planned\*\***
+
+**### Planned**
+
+\* [ ] Rate limiting
+
+\* [ ] Helmet
+
+\* [ ] Input sanitization
+
+\* [ ] Security headers
+
+\* [ ] CORS hardening
+
+\* [ ] Cookie security
+
+\* [ ] JWT security
+
+\* [ ] Password security
+
+\* [ ] Error handling
+
+\* [ ] Abuse prevention
+
+\---
+
+**# Phase 10 — Testing**
+
+**## Module 23 — Backend Testing**
+
+**\*\*Status: ⬜ Planned\*\***
+
+**### Planned**
+
+\* [ ] Unit tests
+
+\* [ ] Integration tests
+
+\* [ ] Authentication tests
+
+\* [ ] API tests
+
+\* [ ] Database testing
+
+\* [ ] Mocking
+
+\* [ ] Error-case testing
+
+\---
+
+**## Module 24 — Frontend Testing**
+
+**\*\*Status: ⬜ Planned\*\***
+
+**### Planned**
+
+\* [ ] Component testing
+
+\* [ ] User interaction testing
+
+\* [ ] Authentication UI testing
+
+\* [ ] Chat UI testing
+
+\* [ ] Real-time UI testing
+
+\---
+
+**# Phase 11 — Documentation**
+
+**## Module 25 — API Documentation**
+
+**\*\*Status: ⬜ Planned\*\***
+
+**### Planned**
+
+\* [ ] Swagger/OpenAPI
+
+\* [ ] Endpoint documentation
+
+\* [ ] Request schemas
+
+\* [ ] Response schemas
+
+\* [ ] Authentication documentation
+
+\* [ ] Error responses
+
+\---
+
+**# Phase 12 — Docker**
+
+**## Module 26 — Containerization**
+
+**\*\*Status: ⬜ Planned\*\***
+
+**### Planned**
+
+\* [ ] Backend Dockerfile
+
+\* [ ] Frontend Dockerfile
+
+\* [ ] Docker Compose
+
+\* [ ] Environment configuration
+
+\* [ ] MongoDB container
+
+\* [ ] Redis container
+
+\* [ ] Development environment
+
+\---
+
+**# Phase 13 — Deployment**
+
+**## Module 27 — Production Deployment**
+
+**\*\*Status: ⬜ Planned\*\***
+
+**### Planned**
+
+\* [ ] Production environment
+
+\* [ ] Database deployment
+
+\* [ ] Backend deployment
+
+\* [ ] Frontend deployment
+
+\* [ ] Environment variables
+
+\* [ ] HTTPS
+
+\* [ ] Domain configuration
+
+\* [ ] Logging
+
+\* [ ] Monitoring
+
+\---
+
+**## Module 28 — CI/CD**
+
+**\*\*Status: ⬜ Planned\*\***
+
+**### Planned**
+
+\* [ ] GitHub Actions
+
+\* [ ] Automated testing
+
+\* [ ] Build pipeline
+
+\* [ ] Docker builds
+
+\* [ ] Deployment pipeline
+
+\* [ ] Production checks
+
+\---
+
+**# 📊 Overall Progress**
+
+\`\`\`text
+
 Phase 0 — Planning
-████████████████████  100%
+
+████████████████████  100%
 
 Phase 1 — Backend Foundation
-████████████████████  100%
+
+████████████████████  100%
 
 Phase 2 — Connections
-░░░░░░░░░░░░░░░░░░░░    0%
+
+░░░░░░░░░░░░░░░░░░░░    0%
 
 Phase 3 — Chat Backend
-░░░░░░░░░░░░░░░░░░░░    0%
+
+░░░░░░░░░░░░░░░░░░░░    0%
 
 Phase 4 — Real-Time System
-░░░░░░░░░░░░░░░░░░░░    0%
+
+░░░░░░░░░░░░░░░░░░░░    0%
 
 Phase 5 — Notifications
-░░░░░░░░░░░░░░░░░░░░    0%
+
+░░░░░░░░░░░░░░░░░░░░    0%
 
 Phase 6 — Media
-░░░░░░░░░░░░░░░░░░░░    0%
+
+░░░░░░░░░░░░░░░░░░░░    0%
 
 Phase 7 — Frontend
-░░░░░░░░░░░░░░░░░░░░    0%
+
+░░░░░░░░░░░░░░░░░░░░    0%
 
 Phase 8 — Advanced Features
-░░░░░░░░░░░░░░░░░░░░    0%
+
+░░░░░░░░░░░░░░░░░░░░    0%
 
 Phase 9 — Security
-░░░░░░░░░░░░░░░░░░░░    0%
+
+░░░░░░░░░░░░░░░░░░░░    0%
 
 Phase 10 — Testing
-░░░░░░░░░░░░░░░░░░░░    0%
+
+░░░░░░░░░░░░░░░░░░░░    0%
 
 Phase 11 — Documentation
-░░░░░░░░░░░░░░░░░░░░    0%
+
+░░░░░░░░░░░░░░░░░░░░    0%
 
 Phase 12 — Docker
-░░░░░░░░░░░░░░░░░░░░    0%
+
+░░░░░░░░░░░░░░░░░░░░    0%
 
 Phase 13 — Deployment
-░░░░░░░░░░░░░░░░░░░░    0%
-```
 
----
+░░░░░░░░░░░░░░░░░░░░    0%
 
-# 📍 Current Position
+\`\`\`
 
-```text
+\---
+
+**# 📍 Current Position**
+
+\`\`\`text
+
 Module 0 ✅
-    ↓
-Module 1 ✅
-    ↓
-Module 2 ✅
-    ↓
-Module 3 ✅
-    ↓
-Module 4 ⬅ NEXT
-    ↓
-Module 5
-    ↓
-...
-    ↓
-Module 28
-```
 
-**Current module: Module 4 — Friend Requests**
+    ↓
+
+Module 1 ✅
+
+    ↓
+
+Module 2 ✅
+
+    ↓
+
+Module 3 ✅
+
+    ↓
+
+Module 4 ✅
+
+    ↓
+
+Module 5
+
+    ↓
+
+...
+
+    ↓
+
+Module 28
+
+\`\`\`
+
+**\*\*Current module: Module 4 — Friend Requests\*\***
