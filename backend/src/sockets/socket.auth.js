@@ -1,4 +1,3 @@
-import jwt from "jsonwebtoken";
 import { generateAccessToken,generateRefreshToken,verifyAccessToken,verifyRefreshToken } from "../utils/token.util.js";
 
 export const authenticateSocket = (

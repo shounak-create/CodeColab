@@ -10,6 +10,12 @@ import {
     isUserOnline,
 } from "./socket.manager.js";
 
+import {
+    createMessage,
+} from "../services/message.service.js";
+
+import Conversation from "../models/conversation.model.js";
+
 export const initializeSocket =
     (httpServer) => {
         const io = new Server(
@@ -57,6 +63,115 @@ export const initializeSocket =
                             isUserOnline(
                                 userId
                             ),
+                    }
+                );
+
+                socket.on(
+                    "conversation:join",
+                    async (
+                        conversationId
+                    ) => {
+                        try {
+                            const conversation =
+                                await Conversation.findOne(
+                                    {
+                                        _id: conversationId,
+                                        members: userId,
+                                    }
+                                );
+
+                            if (
+                                !conversation
+                            ) {
+                                return socket.emit(
+                                    "conversation:error",
+                                    {
+                                        success:
+                                            false,
+                                        message:
+                                            "Conversation not found or you are not a member.",
+                                    }
+                                );
+                            }
+
+                            socket.join(
+                                `conversation:${conversationId}`
+                            );
+
+                            socket.emit(
+                                "conversation:joined",
+                                {
+                                    success:
+                                        true,
+                                    conversationId,
+                                }
+                            );
+                        } catch (error) {
+                            socket.emit(
+                                "conversation:error",
+                                {
+                                    success:
+                                        false,
+                                    message:
+                                        "Unable to join conversation.",
+                                }
+                            );
+                        }
+                    }
+                );
+
+                socket.on(
+                    "message:send",
+                    async (data) => {
+                        try {
+                            const {
+                                conversationId,
+                                content,
+                            } = data || {};
+
+                            if (
+                                !conversationId ||
+                                !content
+                            ) {
+                                return socket.emit(
+                                    "message:error",
+                                    {
+                                        success:
+                                            false,
+                                        message:
+                                            "Conversation ID and message content are required.",
+                                    }
+                                );
+                            }
+
+                            const message =
+                                await createMessage(
+                                    userId,
+                                    conversationId,
+                                    content
+                                );
+
+                            io.to(
+                                `conversation:${conversationId}`
+                            ).emit(
+                                "message:new",
+                                {
+                                    success:
+                                        true,
+                                    message,
+                                }
+                            );
+                        } catch (error) {
+                            socket.emit(
+                                "message:error",
+                                {
+                                    success:
+                                        false,
+                                    message:
+                                        error.message,
+                                }
+                            );
+                        }
                     }
                 );
 
