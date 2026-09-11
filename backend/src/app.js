@@ -8,6 +8,7 @@ import userRoutes from "./routes/user.route.js";
 import friendRequestRoutes from "./routes/friendRequest.route.js";
 import friendshipRoutes from "./routes/friendship.route.js";
 import conversationRoutes from "./routes/conversation.route.js";
+import MessageRoutes from "./routes/message.route.js";
 
 const app = express();
 
@@ -28,5 +29,6 @@ app.use("/api/users", userRoutes);
 app.use("/api/friend-requests",friendRequestRoutes);
 app.use("/api/friendships",friendshipRoutes);
 app.use("/api/conversation",conversationRoutes);
+app.use("/api/message",MessageRoutes);
 
 export default app;
